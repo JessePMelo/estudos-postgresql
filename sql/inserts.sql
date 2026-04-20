@@ -1,9 +1,42 @@
+--
+-- Data for Name: usuarios; Type: TABLE DATA; Schema: public; Owner: jesse
+--
 
-COPY public.avaliacoes (id, corrida_id, nota_motorista, nota_passageiro, comentario, criado_em) FROM stdin;
-1	1	5	5	Ótima corrida	2026-04-19 12:08:48.239134
-2	2	4	5	Boa experiência	2026-04-19 12:08:48.239134
+COPY public.usuarios (id, nome, email, telefone, tipo, criado_em) FROM stdin;
+1	João Silva	joao@email.com	11999999999	motorista	2026-04-19 12:06:50.432897
+2	Maria Souza	maria@email.com	11988888888	passageiro	2026-04-19 12:06:50.432897
+3	Carlos Lima	carlos@email.com	11977777777	passageiro	2026-04-19 12:06:50.432897
+4	Usuario 1	user1@email.com	1190000001	motorista	2026-04-19 13:09:52.942247
+5	Usuario 2	user2@email.com	1190000002	motorista	2026-04-19 13:09:52.942247
+6	Usuario 3	user3@email.com	1190000003	motorista	2026-04-19 13:09:52.942247
+7	Usuario 4	user4@email.com	1190000004	motorista	2026-04-19 13:09:52.942247
+8	Usuario 5	user5@email.com	1190000005	motorista	2026-04-19 13:09:52.942247
+9	Usuario 6	user6@email.com	1190000006	passageiro	2026-04-19 13:09:52.942247
+10	Usuario 7	user7@email.com	1190000007	passageiro	2026-04-19 13:09:52.942247
+11	Usuario 8	user8@email.com	1190000008	passageiro	2026-04-19 13:09:52.942247
+12	Usuario 9	user9@email.com	1190000009	passageiro	2026-04-19 13:09:52.942247
+13	Usuario 10	user10@email.com	11900000010	passageiro	2026-04-19 13:09:52.942247
+14	Usuario 11	user11@email.com	11900000011	passageiro	2026-04-19 13:09:52.942247
+15	Usuario 12	user12@email.com	11900000012	passageiro	2026-04-19 13:09:52.942247
+16	Usuario 13	user13@email.com	11900000013	passageiro	2026-04-19 13:09:52.942247
+17	Usuario 14	user14@email.com	11900000014	passageiro	2026-04-19 13:09:52.942247
+18	Usuario 15	user15@email.com	11900000015	passageiro	2026-04-19 13:09:52.942247
 \.
 
+
+--
+-- Data for Name: motoristas; Type: TABLE DATA; Schema: public; Owner: jesse
+--
+
+COPY public.motoristas (id, usuario_id, cnh, veiculo, placa) FROM stdin;
+1	1	12345678900	Toyota Corolla	ABC1234
+2	1	CNH1	Carro 1	ABC1
+3	4	CNH4	Carro 4	ABC4
+4	5	CNH5	Carro 5	ABC5
+5	6	CNH6	Carro 6	ABC6
+6	7	CNH7	Carro 7	ABC7
+7	8	CNH8	Carro 8	ABC8
+\.
 
 --
 -- Data for Name: corridas; Type: TABLE DATA; Schema: public; Owner: jesse
@@ -64,7 +97,6 @@ COPY public.corridas (id, passageiro_id, motorista_id, origem, destino, distanci
 52	13	1	Zona 4	Zona 2	20.77	66	60.29	finalizada	2026-04-19 13:10:14.006254
 \.
 
-
 --
 -- Data for Name: localizacoes; Type: TABLE DATA; Schema: public; Owner: jesse
 --
@@ -75,19 +107,6 @@ COPY public.localizacoes (id, corrida_id, latitude, longitude, registrado_em) FR
 \.
 
 
---
--- Data for Name: motoristas; Type: TABLE DATA; Schema: public; Owner: jesse
---
-
-COPY public.motoristas (id, usuario_id, cnh, veiculo, placa) FROM stdin;
-1	1	12345678900	Toyota Corolla	ABC1234
-2	1	CNH1	Carro 1	ABC1
-3	4	CNH4	Carro 4	ABC4
-4	5	CNH5	Carro 5	ABC5
-5	6	CNH6	Carro 6	ABC6
-6	7	CNH7	Carro 7	ABC7
-7	8	CNH8	Carro 8	ABC8
-\.
 
 
 --
@@ -152,27 +171,9 @@ COPY public.pagamentos (id, corrida_id, metodo, status, valor, pago_em) FROM std
 \.
 
 
---
--- Data for Name: usuarios; Type: TABLE DATA; Schema: public; Owner: jesse
---
 
-COPY public.usuarios (id, nome, email, telefone, tipo, criado_em) FROM stdin;
-1	João Silva	joao@email.com	11999999999	motorista	2026-04-19 12:06:50.432897
-2	Maria Souza	maria@email.com	11988888888	passageiro	2026-04-19 12:06:50.432897
-3	Carlos Lima	carlos@email.com	11977777777	passageiro	2026-04-19 12:06:50.432897
-4	Usuario 1	user1@email.com	1190000001	motorista	2026-04-19 13:09:52.942247
-5	Usuario 2	user2@email.com	1190000002	motorista	2026-04-19 13:09:52.942247
-6	Usuario 3	user3@email.com	1190000003	motorista	2026-04-19 13:09:52.942247
-7	Usuario 4	user4@email.com	1190000004	motorista	2026-04-19 13:09:52.942247
-8	Usuario 5	user5@email.com	1190000005	motorista	2026-04-19 13:09:52.942247
-9	Usuario 6	user6@email.com	1190000006	passageiro	2026-04-19 13:09:52.942247
-10	Usuario 7	user7@email.com	1190000007	passageiro	2026-04-19 13:09:52.942247
-11	Usuario 8	user8@email.com	1190000008	passageiro	2026-04-19 13:09:52.942247
-12	Usuario 9	user9@email.com	1190000009	passageiro	2026-04-19 13:09:52.942247
-13	Usuario 10	user10@email.com	11900000010	passageiro	2026-04-19 13:09:52.942247
-14	Usuario 11	user11@email.com	11900000011	passageiro	2026-04-19 13:09:52.942247
-15	Usuario 12	user12@email.com	11900000012	passageiro	2026-04-19 13:09:52.942247
-16	Usuario 13	user13@email.com	11900000013	passageiro	2026-04-19 13:09:52.942247
-17	Usuario 14	user14@email.com	11900000014	passageiro	2026-04-19 13:09:52.942247
-18	Usuario 15	user15@email.com	11900000015	passageiro	2026-04-19 13:09:52.942247
+
+COPY public.avaliacoes (id, corrida_id, nota_motorista, nota_passageiro, comentario, criado_em) FROM stdin;
+1	1	5	5	Ótima corrida	2026-04-19 12:08:48.239134
+2	2	4	5	Boa experiência	2026-04-19 12:08:48.239134
 \.
